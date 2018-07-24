@@ -34,7 +34,7 @@ to setup-seat
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
    setxy -7 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 1 ;座席番号
   ]
   create-signs 1;
@@ -42,7 +42,7 @@ to setup-seat
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
    setxy -4.5 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 2 ;座席番号
   ]
   create-signs 1;
@@ -50,7 +50,7 @@ to setup-seat
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
    setxy -2 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 3 ;座席番号
   ]
   create-signs 1;
@@ -58,7 +58,7 @@ to setup-seat
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 0.5 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 4 ;座席番号
   ]
   create-signs 1;
@@ -66,7 +66,7 @@ to setup-seat
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 3 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 5 ;座席番号
   ]
   create-signs 1;
@@ -74,7 +74,7 @@ to setup-seat
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 5.5 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 6 ;座席番号
   ]
   create-signs 1;
@@ -82,8 +82,48 @@ to setup-seat
    set color orange;矢印の色
    set size 2 ;矢印のサイズ
    setxy 8 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 7 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy -7 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number  ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy -4.5 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 10 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy -2 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 11 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 5.5 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 12 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 8 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 13 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
@@ -92,54 +132,6 @@ to setup-seat
    setxy 10.5 7.5 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 8 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -7 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 9 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -4.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 10 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -2 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 11 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 5.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 12 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 8 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 13 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 10.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 14 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
@@ -156,6 +148,14 @@ to setup-seat
    setxy 10.5 4 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 16 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 10.5 2.5 ;矢印の位置
+   set heading -90; 矢印の向き
+   set seat-number 14 ;座席番号
   ]
 end
 

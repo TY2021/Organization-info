@@ -4,27 +4,25 @@ patches-own [bus driver feebox exit entrance]
 humans-own [sex age get-off-count]
 
 globals[time ;人々が発生する間隔時間
-  turtle-num-up ;pxcor>0にいる人の数
-  turtle-num-down ;pxcor<0にいる人の数
+  human-set
   seat-number
-  seat-counter
+  seat-count
   left-rigth
-  zahyo
-  born
-  ]
+  stand-count
+]
 
 to setup
   clear-all
   reset-ticks
   ask patches [setup-enviroment] ;背景を描く
   setup-seat ;座席を描く
-  appear-human
+  ;appear-human
 end
 
 to setup-enviroment ;背景の設定
   set pcolor white ;地の色は白
-  if (pxcor > -12) and (pxcor < 12) and (pycor > 1) and (pycor < 10) [set pcolor black] ;バスの枠
-  if (pxcor > -12) and (pxcor < -8) and (pycor > 6) and (pycor < 10) [set pcolor blue] ;運転席
+  if (pxcor > -12) and (pxcor < 12) and (pycor > 1) and (pycor < 9) [set pcolor black] ;バスの枠
+  if (pxcor > -12) and (pxcor < -8) and (pycor > 6) and (pycor < 9) [set pcolor blue] ;運転席
   if (pxcor > -12) and (pxcor < -8) and (pycor > 5) and (pycor < 7) [set pcolor brown] ;運賃箱
   if (pxcor > -12) and (pxcor < -8) and (pycor > 1) and (pycor < 5) [set pcolor gray] ;出口
   if (pxcor > -0.5) and (pxcor < 4) and (pycor > 1) and (pycor < 4) [set pcolor sky] ;入口
@@ -35,111 +33,103 @@ to setup-seat
   [set shape "arrow" ;arrow = 矢印
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy -7 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy -7 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 1 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy -4.5 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy -4.5 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 2 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy -2 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy -2 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 3 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 0.5 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy 0.5 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 4 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 3 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy 3 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 5 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 5.5 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy 5.5 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 6 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 8 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy 8 7.5 ;矢印の位置
+   set heading 180; 矢印の向き
    set seat-number 7 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 8 7 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy -7 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
    set seat-number 8 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 10.5 8.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy -4.5 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
    set seat-number 9 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy -7 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   setxy -2 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
    set seat-number 10 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy -4.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 11 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -2 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 11 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
    setxy 5.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 12 ;座席番号
+   set heading 0; 矢印の向き
+   set seat-number 11 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 8 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 12 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 10.5 7.5 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 13 ;座席番号
   ]
@@ -147,7 +137,7 @@ to setup-seat
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 8 4 ;矢印の位置
+   setxy 10.5 5.7 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 14 ;座席番号
   ]
@@ -155,7 +145,7 @@ to setup-seat
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 10.5 2.5 ;矢印の位置
+   setxy 10.5 4 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 15 ;座席番号
   ]
@@ -163,80 +153,92 @@ to setup-seat
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
-   setxy 10.5 7 ;矢印の位置
+   setxy 10.5 2.5 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 16 ;座席番号
   ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 10.5 5.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 17 ;座席番号
+end
+
+to appear-human
+  set human-set -1
+  create-humans random 10 ;10人以下の乗客をランダムに作成
+  [set shape "person"
+   set size 2
+   setxy 2 human-set
+   set heading 0
+   set sex random 2
+   set age random 80
+   set get-off-count random 7
+   if (sex = 0) [set color blue]
+   if (sex = 1) [set color red]
+   set human-set human-set - 1
   ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 10.5 4 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 18 ;座席番号
-  ]
+  ask humans with [get-off-count = 0] [die];
+  ;ask humans with [get-off-count = 1] [die];
 end
 
 to go
   appear-human
   get-on
-  get-off
+  ;get-off
+  ;ask humans [set get-off-count get-off-count - 1]
 end
 
 to get-on ;乗車・座席立席位置探し
-  set left-rigth random 1 ; 乗客が左右の向きをランダムに決める
-  ask humans with [pycor < 4] [fd 1] ;バス停の客をバスの入口まで移動させる
+  set stand-count 0
+  ask humans [set get-off-count get-off-count - 1]
+  loop [
+    ;乗客が位置を定める かつ 乗客が降り切るまで乗客を動かす
+    if (count humans-on signs >= count humans and count humans with [get-off-count = 0] = 0) [stop]
+    if (count humans-on signs <= count humans and stand-count = 1 and count humans with [get-off-count < 0] < 0) [stop]
 
-  ;座席・立席探し
-  ifelse (count signs-on humans < 19 and left-rigth = 0) ;左右の向きを決定
-    [ask humans with [pycor >= 3] [left 90]]
-    [ask humans with [pycor >= 3] [left -90]]
+    set left-rigth random 2 ;乗車後左右どっちに行くか決める変数
+    set seat-count 0 ;座席カウンタリセット
 
-  if (count signs-on humans < 19) ;適当に移動
-    [ask humans with [pycor >= 3] [fd 1]]
+    ;降車
+    ask humans [if (get-off-count = 0 and heading != -90) [set heading -90 setxy pxcor 5]] ;出口へ向きを変える
+    ask humans with [get-off-count = 0] [fd 1] ;出口へ1つずつ進める
+    ask humans [if (pxcor < -10) [die]] ;出口に着いた乗客を消す
 
-  if (count humans- of neighbors with [signs-on humans != 0] > 0) ;近くの座席が空いていれば座る
-    [move-to one-of neighbors with [signs-on humans != 0]]
+    ask humans with [pxcor = 2 and pycor <= 4] [fd 1] ;バス停の客をバスの入口まで移動させる
+    ask humans with [pxcor = 2 and pycor = 5] [if (left-rigth = 0) [left 90]] ;左に向く
+    ask humans with [pxcor = 2 and pycor = 5] [if (left-rigth = 1) [right 90]] ;右に向く
 
-  if (count signs-on humans > 18) ;人がいない立席に移動
-    [ask humans with [pycor >= 3] [move-to one-of neighbors with [count humans != 0]]]
+    if (count signs-on humans <= 16) ;適当に車内を移動
+     [ask humans with [pycor >= 5 and pycor < 7.5] [fd 1]]
 
-  ;[move-to one-of signs with [signs-on humans != 0]]] ;空席に移動
-  ;move-to one-of neighbors with [signs-on humans != 0]
+    ;最も近い座席に移動
+    while [seat-count < 16] [
+      if (count humans with [pycor >= 5 and pycor < 7.5 and get-off-count != 0 and distance sign seat-count < 2.6] > 0 and count humans-on sign seat-count <= 0)
+        [ask humans with [pycor >= 5 and pycor < 7.5 and get-off-count != 0 and distance sign seat-count < 2.6]
+        [move-to sign seat-count]]
+      set seat-count seat-count + 1
+    ]
+
+    print count humans-on humans
+
+    if (count signs-on humans > 16) ;人がいない立席に移動
+      [set stand-count 1 ask humans with [count humans-on signs > 16 and pycor >= 5 and pycor < 7.5] [move-to one-of neighbors4]]
+    ]
+;if (count humans with [signs-on humans != 0] > 0) ;近くの座席が空いていれば座る
+;[ask humans with [pycor >= 5] [move-to min-one-of signs [distance signs] with [signs-on humans != 0]]]
+;[move-to one-of signs with [signs-on humans != 0]]] ;空席に移動
+; move-to one-of neighbors with [signs-on humans != 0]
 end
 
 to get-off ;降車
-  ask humans with [get-off-count = 0] [fd 1]
-  ask humans [if (pycor < 2 and pxcor < -10) [die]]
+  loop [
+    if (count humans with [get-off-count = 0] = 0) [stop]
+    ask humans [ifelse (get-off-count = 0 and heading = 90) [left -180 setxy pxcor 5] [setxy pxcor 5]]
+    ask humans with [get-off-count = 0] [fd 1]
+    ask humans [if (pxcor < -10) [die]]
+  ]
 end
 
 to select-position ;座席・立席選択
   ask humans [if (xa >= xc) and (xb <= xd) and (pycor < 0)[facexy (xb - random(xb - xa + 1)) 0]]
   ask turtles [if (pycor >= 0) [facexy (xb - random(xb - xa + 1)) 16]]
   ask turtles [fd random 3]
-end
-
-to appear-human
-  create-humans random 10 ;10人以下の乗客をランダムに作成
-  [set shape "person"
-   set size 2
-   setxy 2 random -10
-   set heading 0
-   set sex random 2
-   set age random 80
-   set get-off-count random 5
-   if (sex = 0) [set color blue]
-   if (sex = 1) [set color red]
-  ]
-  ask humans with [get-off-count = 0] [die];
 end
 
   ;ask bus [if (pxcor > -12) and (pxcor < 12) and (pycor > 1) and (pycor < 10) [set pcolor black]] ;バスの枠
@@ -380,6 +382,40 @@ xa
 1
 NIL
 HORIZONTAL
+
+BUTTON
+23
+365
+98
+398
+NIL
+get-off
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+55
+435
+129
+468
+NIL
+get-on
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
