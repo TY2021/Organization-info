@@ -7,7 +7,6 @@ globals[
   stress
   human-set
   repeat-count
-  set-seat
   seat-number
   seat-count
   stand-count
@@ -194,13 +193,10 @@ to move ;乗客の動作（乗車・降車・座席立席探し）
     ;乗客が位置を定める かつ 乗客が降り切るまで乗客を動かす
     if (count humans-on signs = count humans and count humans with [get-off-count <= 0] = 0) [stop]
     if (stand-count = 1 and count humans with [get-off-count <= 0] = 0) [stop]
-    if (stand-count = 1 and count humans with [get-off-count <= 0] = 0) [stop]
-    if (stand-count = 0 and set-seat = 0 and count humans with [get-off-count <= 0] = 0) [stop]
     ;if (stand-count = 1 and count humans with [get-off-count < 0] = 0) [stop]
     ;if ((count humans with [pycor = 4 or pycor = 6] + count humans-on signs) >= count humans and count humans with [get-off-count < 0] = 0) [stop]
 
     set seat-count 0 ;座席カウンタリセット
-    set set-seat 0;
 
     ;降車
     ask humans with [get-off-count = 0] [set heading -90 setxy pxcor 5] ;出口へ向きを変える
@@ -220,22 +216,21 @@ to move ;乗客の動作（乗車・降車・座席立席探し）
 
     ;最も近い座席に移動;
     while [seat-count < 16] [
-      if (count humans with [pxcor >= -7 and pxcor <= 10 and pycor > 3 and pycor <= 7 and get-off-count != 0 and distance sign seat-count < 2.6] > 0 and count humans-on sign seat-count <= 0)
-        [ask humans with [pxcor >= -7 and pxcor <= 10 and pycor > 3 and pycor <= 7 and get-off-count != 0 and distance sign seat-count < 2.6]
-        [move-to sign seat-count] set set-seat 1]
+      if (count humans with [pxcor >= -7 and pxcor <= 10 and pycor >= 5 and pycor < 7.5 and get-off-count != 0 and distance sign seat-count < 2.6] > 0 and count humans-on sign seat-count <= 0)
+        [ask humans with [pxcor >= -7 and pxcor <= 10 and pycor >= 5 and pycor < 7.5 and get-off-count != 0 and distance sign seat-count < 2.6]
+        [move-to sign seat-count]]
       set seat-count seat-count + 1
     ]
 
-    ;立席に移動;
+    ;人がいない立席に移動;;;
     if (count humans-on signs > 15)
-      [ask humans with [pxcor >= -8 and pxcor <= 8 and pycor = 5 and get-off-count != 0] [move-to one-of neighbors] set stand-count 1]
+      [ask humans with [pxcor >= -8 and pxcor <= 9 and pycor = 5 and get-off-count != 0] [move-to one-of neighbors] set stand-count 1]
     if (count humans-on signs < 16 and count humans-on sign 0 = 1 and count humans-on sign 1 = 1 and count humans-on sign 2 = 1 and count humans-on sign 8 = 1 and count humans-on sign 9 = 1 and count humans-on sign 10 = 1)
       [ask humans with [pxcor >= -8 and pxcor <= 1 and pycor = 5 and get-off-count != 0] [move-to one-of neighbors] set stand-count 1]
     if (count humans-on signs < 16 and count humans-on sign 5 = 1 and count humans-on sign 6 = 1 and count humans-on sign 7 = 1 and count humans-on sign 11 = 1 and count humans-on sign 12 = 1 and count humans-on sign 13 = 1 and count humans-on sign 14 = 1 and count humans-on sign 15 = 1)
-      [ask humans with [pxcor >= 3 and pxcor <= 8 and pycor = 5 and get-off-count != 0] [move-to one-of neighbors] set stand-count 1]
+      [ask humans with [pxcor >= 3 and pxcor <= 9 and pycor = 5 and get-off-count != 0] [move-to one-of neighbors] set stand-count 1]
 
     ;時間計測
-    tick
     set time time + 1
     ]
 end

@@ -4,12 +4,12 @@ humans-own [sex age get-off-count]
 
 globals[
   time
-  stress
-  human-set
   repeat-count
+  human-set
   set-seat
   seat-number
   seat-count
+  left-rigth
   stand-count
 ]
 
@@ -35,7 +35,7 @@ to setup-seat
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
    setxy -7 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 1 ;座席番号
   ]
   create-signs 1;
@@ -43,7 +43,7 @@ to setup-seat
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
    setxy -4.5 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 2 ;座席番号
   ]
   create-signs 1;
@@ -51,7 +51,7 @@ to setup-seat
    set color green ;矢印の色
    set size 2 ;矢印のサイズ
    setxy -2 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 3 ;座席番号
   ]
   create-signs 1;
@@ -59,7 +59,7 @@ to setup-seat
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 0.5 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 4 ;座席番号
   ]
   create-signs 1;
@@ -67,7 +67,7 @@ to setup-seat
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 3 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 5 ;座席番号
   ]
   create-signs 1;
@@ -75,7 +75,7 @@ to setup-seat
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 5.5 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 6 ;座席番号
   ]
   create-signs 1;
@@ -83,8 +83,48 @@ to setup-seat
    set color orange;矢印の色
    set size 2 ;矢印のサイズ
    setxy 8 7.5 ;矢印の位置
-   set heading -90; 矢印の向き
+   set heading 180; 矢印の向き
    set seat-number 7 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy -7 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 8 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy -4.5 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 9 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy -2 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 10 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 5.5 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 11 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 8 2.5 ;矢印の位置
+   set heading 0; 矢印の向き
+   set seat-number 12 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
@@ -92,55 +132,7 @@ to setup-seat
    set size 2 ;矢印のサイズ
    setxy 10.5 7.5 ;矢印の位置
    set heading -90; 矢印の向き
-   set seat-number 8 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -7 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 9 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -4.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 10 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy -2 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 11 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 5.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 12 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 8 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
    set seat-number 13 ;座席番号
-  ]
-  create-signs 1;
-  [set shape "arrow" ;arrow = 矢印
-   set color orange ;矢印の色
-   set size 2 ;矢印のサイズ
-   setxy 10.5 2.5 ;矢印の位置
-   set heading -90; 矢印の向き
-   set seat-number 14 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
@@ -148,13 +140,21 @@ to setup-seat
    set size 2 ;矢印のサイズ
    setxy 10.5 5.7 ;矢印の位置
    set heading -90; 矢印の向き
-   set seat-number 15 ;座席番号
+   set seat-number 14 ;座席番号
   ]
   create-signs 1;
   [set shape "arrow" ;arrow = 矢印
    set color orange ;矢印の色
    set size 2 ;矢印のサイズ
    setxy 10.5 4 ;矢印の位置
+   set heading -90; 矢印の向き
+   set seat-number 15 ;座席番号
+  ]
+  create-signs 1;
+  [set shape "arrow" ;arrow = 矢印
+   set color orange ;矢印の色
+   set size 2 ;矢印のサイズ
+   setxy 10.5 2.5 ;矢印の位置
    set heading -90; 矢印の向き
    set seat-number 16 ;座席番号
   ]
@@ -180,13 +180,13 @@ end
 
 to go
   while [repeat-count < 10] [
-   appear-human
-   move
-   set repeat-count repeat-count + 1
+    appear-human
+    move
+    set repeat-count repeat-count + 1;
   ]
 end
 
-to move ;乗客の動作（乗車・降車・座席立席探し）
+to move ;乗客の行動（乗車・座席立席位置探し）
   set stand-count 0
   ask humans [set get-off-count get-off-count - 1]
 
@@ -240,11 +240,25 @@ to move ;乗客の動作（乗車・降車・座席立席探し）
     ]
 end
 
-  ;ask bus [if (pxcor > -12) and (pxcor < 12) and (pycor > 1) and (pycor < 10) [set pcolor black]] ;バスの枠
-  ;ask driver [if (pxcor > -12) and (pxcor < -8) and (pycor > 6) and (pycor < 10) [set pcolor blue]] ;運転席
-  ;ask feebox [if (pxcor > -12) and (pxcor < -8) and (pycor > 5) and (pycor < 7) [set pcolor brown]] ;運賃箱
-  ;ask exit [if (pxcor > -12) and (pxcor < -8) and (pycor > 1) and (pycor < 5) [set pcolor gray]] ;出口
-  ;ask entrance [if (pxcor > -0.5) and (pxcor < 4) and (pycor > 1) and (pycor < 4) [set pcolor sky]] ;入口
+to get-off ;降車
+  loop [
+    if (count humans with [get-off-count = 0] = 0) [stop]
+    ask humans [ifelse (get-off-count = 0 and heading = 90) [left -180 setxy pxcor 5] [setxy pxcor 5]]
+    ask humans with [get-off-count = 0] [fd 1]
+    ask humans [if (pxcor < -10) [die]]
+  ]
+end
+
+;if (count humans with [signs-on humans != 0] > 0) ;近くの座席が空いていれば座る
+;[ask humans with [pycor >= 5] [move-to min-one-of signs [distance signs] with [signs-on humans != 0]]]
+;[move-to one-of signs with [signs-on humans != 0]]] ;空席に移動
+; move-to one-of neighbors with [signs-on humans != 0]
+
+;ask bus [if (pxcor > -12) and (pxcor < 12) and (pycor > 1) and (pycor < 10) [set pcolor black]] ;バスの枠
+;ask driver [if (pxcor > -12) and (pxcor < -8) and (pycor > 6) and (pycor < 10) [set pcolor blue]] ;運転席
+;ask feebox [if (pxcor > -12) and (pxcor < -8) and (pycor > 5) and (pycor < 7) [set pcolor brown]] ;運賃箱
+;ask exit [if (pxcor > -12) and (pxcor < -8) and (pycor > 1) and (pycor < 5) [set pcolor gray]] ;出口
+;ask entrance [if (pxcor > -0.5) and (pxcor < 4) and (pycor > 1) and (pycor < 4) [set pcolor sky]] ;入口
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -308,10 +322,10 @@ NIL
 1
 
 MONITOR
-63
-120
-120
-165
+66
+170
+123
+215
 time
 time
 17
@@ -319,10 +333,10 @@ time
 11
 
 PLOT
-3
-191
-203
-341
+1
+238
+201
+388
 Stress transition
 time
 stress
@@ -335,50 +349,6 @@ false
 "" ""
 PENS
 "stress" 1.0 0 -16777216 true "" "plot count humans-on humans"
-
-MONITOR
-125
-506
-380
-551
-NIL
-count humans with [get-off-count = 0]
-17
-1
-11
-
-MONITOR
-479
-488
-641
-533
-NIL
-count humans-on signs
-17
-1
-11
-
-MONITOR
-481
-542
-583
-587
-NIL
-count humans
-17
-1
-11
-
-MONITOR
-760
-332
-850
-377
-NIL
-stand-count
-17
-1
-11
 
 @#$#@#$#@
 ## WHAT IS IT?
